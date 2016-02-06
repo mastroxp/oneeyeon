@@ -14,6 +14,7 @@
 		80A005621C6628EE001A27CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A005601C6628EE001A27CD /* Main.storyboard */; };
 		80A005641C6628EE001A27CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A005631C6628EE001A27CD /* Assets.xcassets */; };
 		80A005671C6628EE001A27CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A005651C6628EE001A27CD /* LaunchScreen.storyboard */; };
+		80A0056F1C6629AE001A27CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A0056E1C6629AE001A27CD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		80A005631C6628EE001A27CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80A005661C6628EE001A27CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80A005681C6628EE001A27CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80A0056E1C6629AE001A27CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		80A005701C662AE7001A27CD /* One Eye On.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "One Eye On.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A0056F1C6629AE001A27CD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 		80A0054B1C6628EE001A27CD = {
 			isa = PBXGroup;
 			children = (
+				80A0056E1C6629AE001A27CD /* MapKit.framework */,
 				80A005561C6628EE001A27CD /* One Eye On */,
 				80A005551C6628EE001A27CD /* Products */,
 			);
@@ -58,6 +63,7 @@
 		80A005561C6628EE001A27CD /* One Eye On */ = {
 			isa = PBXGroup;
 			children = (
+				80A005701C662AE7001A27CD /* One Eye On.entitlements */,
 				80A005571C6628EE001A27CD /* AppDelegate.swift */,
 				80A0055C1C6628EE001A27CD /* MasterViewController.swift */,
 				80A0055E1C6628EE001A27CD /* DetailViewController.swift */,
@@ -102,6 +108,15 @@
 				TargetAttributes = {
 					80A005531C6628EE001A27CD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = S9G5LDM3X6;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -257,10 +272,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "One Eye On/One Eye On.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "One Eye On/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "in.pausa.oneeyeon.One-Eye-On";
+				PRODUCT_BUNDLE_IDENTIFIER = in.pausa.oneeyeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -268,10 +287,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "One Eye On/One Eye On.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "One Eye On/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "in.pausa.oneeyeon.One-Eye-On";
+				PRODUCT_BUNDLE_IDENTIFIER = in.pausa.oneeyeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
